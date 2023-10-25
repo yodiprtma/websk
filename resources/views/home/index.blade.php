@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title', 'Home')
+@section('title', 'Homee')
 
 @section('breadcrumb')
     <li class="breadcrumb-item active">Home</li>
