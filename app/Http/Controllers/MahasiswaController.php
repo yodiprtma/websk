@@ -18,7 +18,7 @@ class MahasiswaController extends Controller
         return redirect(url('/mahasiswa'));
     }
 
-    public function store(Request $request, $id)
+    public function update(Request $request, $id)
     {
         DB::table('mhs')
         ->where('id', $id)
@@ -29,6 +29,15 @@ class MahasiswaController extends Controller
         ]);
 
         return redirect(url('/mahasiswa'));
+    }
+    public function destroy($id)
+    {
+        DB::table('mhs')
+        ->where('id', $id)
+        ->update();
+        
+        return redirect(url('/mahasiswa'));
+    }
 
     public function index()
     {

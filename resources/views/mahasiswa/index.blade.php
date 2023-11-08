@@ -38,10 +38,10 @@
                                 <a class="btn btn-sm btn-warning"
                                     href="{{ url('/mahasiswa/' . $d->id . '/edit') }}">Ubah</a>
 
-                                <form action="{{ url('/mahasiswa/' . $d->id . '/edit') }}">
+                                <form action="{{ url('/mahasiswa/' . $d->id ) }}" method ="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit"class="btn btn-sm btndanger">hapus</button>
+                                    <button type="submit"class="btn btn-sm btn-danger">hapus</button>
                                 </form>
                             </td>
                         </tr>

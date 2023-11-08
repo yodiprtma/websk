@@ -20,11 +20,11 @@
             <div class="card-body">
                 <div>
                     <label class="form-label">NIM</label>
-                    <input class="form-control" type="text" name="nim" value="{{ $data['nim'] }}">
+                    <input class="form-control" type="text" name="nim" value="{{ $data ->nim}}">
                 </div>
                 <div>
                     <label class="form-label">Nama</label>
-                    <input class="form-control" type="text" name="nama" value="{{ $data['nama'] }}">
+                    <input class="form-control" type="text" name="nama" value="{{ $data->nama}}">
                 </div>
                 <div>
                     <label class="form-label">Jurusan</label>
