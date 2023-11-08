@@ -21,8 +21,10 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::controller(MahasiswaController::class)->prefix("mahasiswa")->group(function () {
     Route::get('/', 'index');
+    Route::post('/', 'store');
     Route::get('/create', 'create');
     Route::get('/{id}', 'show');
+    Route::put('/{id}', 'update');
     Route::get('/{id}/edit', 'edit');
 });
 

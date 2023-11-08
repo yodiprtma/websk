@@ -7,6 +7,28 @@ use illuminate\Support\Facades\DB;
 
 class MahasiswaController extends Controller
 {
+    public function store(Request $request)
+    {
+        DB::table('mhs')->insert([
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'jurusan_id'=> $request->jurusan
+        ]);
+
+        return redirect(url('/mahasiswa'));
+    }
+
+    public function store(Request $request, $id)
+    {
+        DB::table('mhs')
+        ->where('id', $id)
+        ->update([
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'jurusan_id'=> $request->jurusan
+        ]);
+
+        return redirect(url('/mahasiswa'));
 
     public function index()
     {

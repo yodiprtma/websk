@@ -1,9 +1,9 @@
 @extends('layout.master')
 
-@section('title', 'Ubah Mahasiswa')
+@section('title', 'Ubah MK')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ url('/MK') }}">Mahasiswa</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('/mk') }}">MK</a></li>
     <li class="breadcrumb-item active">Ubah</li>
 @endsection
 
@@ -11,27 +11,27 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <h4 class="card-title">Form Ubah Mahasiswa</h4>
+                <h4 class="card-title">Form Ubah Mata Kuliah</h4>
             </div>
         </div>
-        <form action="{{ url('/MK/' . $id) }}" method="POST">
+        <form action="{{ url('//'mk . $id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-body">
                 <div>
-                    <label class="form-label">NIM</label>
-                    <input class="form-control" type="text" name="nim" value="{{ $data['nim'] }}">
+                    <label class="form-label">id</label>
+                    <input class="form-control" type="text" name="id" value="{{ $mk->idmk }}">
                 </div>
                 <div>
                     <label class="form-label">Nama</label>
-                    <input class="form-control" type="text" name="nama" value="{{ $data['nama'] }}">
+                    <input class="form-control" type="text" name="nama" value="{{ $mk->namamk }}">
                 </div>
                 <div>
                     <label class="form-label">Jurusan</label>
                     <select class="form-select" name="jurusan">
-                        <option {{ $matkul['jurusan'] == 'TI' ? 'selected' : '' }} value="TI">TI</option>
-                        <option {{ $matkul['jurusan'] == 'SK' ? 'selected' : '' }} value="SK">SK</option>
-                        <option {{ $matkul['jurusan'] == 'DGM' ? 'selected' : '' }} value="DGM">DGM</option>
+                        @foreach ($jurusan as $j)
+                            <option {{ $mk->jurusan_id == $j->id ? 'selected' : '' }} value={{ $j->id }}>{{ $j->nama }}</option>
+                        @endforeach
                     </select>
                 </div>
 
